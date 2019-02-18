@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pers</groupId>
+  <artifactId>corenlp-test</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <java.main.class>com.corenlp.test.NLPTest</java.main.class>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+	    <groupId>edu.stanford.nlp</groupId>
+	    <artifactId>stanford-corenlp</artifactId>
+	    <version>3.9.2</version>
+	</dependency>
+	<!-- <dependency>
+	    <groupId>edu.stanford.nlp</groupId>
+	    <artifactId>stanford-corenlp</artifactId>
+	    <version>3.9.2</version>
+	    <classifier>models-english</classifier>
+	</dependency> -->
+	<dependency>
+	    <groupId>edu.stanford.nlp</groupId>
+	    <artifactId>stanford-corenlp</artifactId>
+	    <version>3.9.2</version>
+	    <classifier>models</classifier>
+	</dependency>
+  </dependencies>
+  
+  <build>
+  	<plugins>
+  		<plugin>
+	        <groupId>org.codehaus.mojo</groupId>
+	        <artifactId>exec-maven-plugin</artifactId>
+	        <version>1.6.0</version>
+	        <configuration>
+	           <mainClass>${java.main.class}</mainClass>
+	           <cleanupDaemonThreads>false</cleanupDaemonThreads>
+	        </configuration>
+		</plugin>
+  	</plugins>
+  </build>
+  
+</project>
